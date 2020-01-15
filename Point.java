@@ -17,7 +17,7 @@ public class Point{
     }
 
     public double distance(Point p ){
-        return Math.sqrt((p.getYcord() - this . yCord) * (p.getYcord() - this.yCord) + (p.getXcord() - this . xCord * (p.getXcord() - this . xCord)));
+        return Math.sqrt(((p.getYcord() - this . yCord) * (p.getYcord() - this.yCord)) + ((p.getXcord() - this . xCord) * (p.getXcord() - this . xCord)));
 
     }
     
