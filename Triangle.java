@@ -9,9 +9,9 @@ public class Triangle{
 	}
 
 	public double area(){
-		double a = vertexes[0].distance(vertex[1]);
-		double b = vertexes[1].distance(vertex[2]);
-		double c = vertexes[2].distance(vertex[0]);
+		double a = vertexes[0].distance(vertexes[1]);
+		double b = vertexes[1].distance(vertexes[2]);
+		double c = vertexes[2].distance(vertexes[0]);
 		double s = 0.5 * (a + b + c);
 		return Math.sqrt(s * (s-a) * (s-b) * (s-c));
 	}
