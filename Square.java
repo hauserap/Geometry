@@ -1,6 +1,6 @@
 public class Square{
     private Point[]  vertexes = new Point[4];
-    private int numberOfSides;
+    
 
 
     public Square(Point point1, Point point2, Point point3, Point point4){
@@ -16,11 +16,7 @@ public class Square{
         return (a*b);
     }
     public double perimeter(){
-		int perimeter = 0;
-		for (int i = 0; i<this.numberOfSides - 1; i++){
-			perimeter += Math.abs(vertexes.get(i).distance(vertexes.get(i + 1)));
-		}
-		perimeter += Math.abs(vertexes.get(numberOfSides - 1).distance(vertexes.get(i)));
-		return perimeter;
+	
+		return (double)this.vertexes[1].distance(this.vertexes[0]) *4;
 	}
 }
