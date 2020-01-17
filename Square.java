@@ -1,7 +1,5 @@
 public class Square{
     private Point[]  vertexes = new Point[4];
-    
-
 
     public Square(Point point1, Point point2, Point point3, Point point4){
 		this.vertexes[0] = point1;
@@ -16,7 +14,10 @@ public class Square{
         return (a*b);
     }
     public double perimeter(){
-	
 		return (double)this.vertexes[1].distance(this.vertexes[0]) *4;
-	}
+    }
+    
+    // public Point getLowerLeft(){
+    //     return 
+    // }
 }
