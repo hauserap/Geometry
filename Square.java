@@ -37,7 +37,7 @@ public class Square{
     	return vertexes;
     }
 
-    public static boolean collision(Square sqr2){
+    public boolean collision(Square sqr2){
     	for (int i = 0; i<4; i++){ //iterates between each point
     		if (this.vertexes[i].inside(sqr2.getPoint0(), sqr2.getPoint2())){
     			return true;
