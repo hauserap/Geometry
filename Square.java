@@ -1,11 +1,25 @@
 public class Square{
     private Point[]  vertexes = new Point[4];
 
-    public Square(Point point1, Point point2, Point point3, Point point4){
-		this.vertexes[0] = point1;
-		this.vertexes[1] = point2;
-        this.vertexes[2] = point3;
-        this.vertexes[3] = point4;
+//    public Square(Point point1, Point point2, Point point3, Point point4){
+//		if (   point1.getXcord() == point2.getXcord() 
+//			&& point1.getYcord() == point4.getYcord() 
+//			&& point4.getXcord() == point3.getXcord() 
+//			&& point2.getYcord() == point3.getYcord()){
+//			//sqaure constructed starting with upper left and moving counterclockwise
+//			this.vertexes[0] = point1;
+//			this.vertexes[1] = point2;
+//        	this.vertexes[2] = point3;
+//        	this.vertexes[3] = point4;
+//    	}
+//    }
+
+    public Square(Point point0, Point point2){
+			this.vertexes[0] = point0;
+        	this.vertexes[2] = point2;
+        	this.vertexes[1] = new Point(point0.getXcord(), point2.getYcord());
+        	this.vertexes[3] = new Point(point2.getXcord(), point0.getYcord());
+    	}
     }
     
     public double area(){
@@ -16,8 +30,24 @@ public class Square{
     public double perimeter(){
 		return (double)this.vertexes[1].distance(this.vertexes[0]) *4;
     }
+
+    public Point getPoint1(){
+    	return this.vertexes[0];
+    }
+    public Point getPoint3(){
+    	return this.vertexes[2];
+    }
+
+    public boolean collision(Square sqr2){
+    	for (int i = 0; i<4; i++){ //iterates between each point
+    		if (this.vertexes[i].inside(sqr2.getPoint1(), sqr2.getPoint3())){
+    			return true;
+    		}
+    	}
+    	return false;
+    }
     
-    // public Point getLowerLeft(){
-    //     return 
-    // }
+
+
+
 }
